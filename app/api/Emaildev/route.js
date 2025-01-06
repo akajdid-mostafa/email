@@ -37,7 +37,7 @@ export async function POST(req) {
         <p style="padding: 8px; background-color: #f9f9f9; border-radius: 8px; border: 1px solid #ddd;">${message}</p>
       </div>
       <footer style="margin-top: 20px; padding-top: 10px; border-top: 1px solid #eee;">
-        <p style="font-size: 0.9em; color: #777;">Cet e-mail a été envoyé à partir du formulaire de contact du site web Oceanconnecting.ma .</p>
+        <p style="font-size: 0.9em; color: #777;">Cet e-mail a été envoyé à partir du formulaire de contact du site web Oceanconnecting.dev</p>
       </footer>
     </div>
   </div>
