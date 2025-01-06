@@ -25,21 +25,17 @@ export async function POST(req) {
   -webkit-background-clip: text;
   -moz-background-clip: text;
   color: transparent;
-  padding-bottom: 10px;
-  border-bottom: 2px solid linear-gradient(to right, #2563EB, #DC2626);
-">
+  padding-bottom: 6px;
+  border-bottom: 2px solid linear-gradient(to right, #2563EB, #DC2626);">
   Nouveau contact sur mon site 
 </h2>
-      <!-- Details Section -->
       <p style="margin: 0; padding: 8px 0;"><strong>Nom:</strong> ${name}</p>
       <p style="margin: 0; padding: 8px 0;"><strong>Email:</strong> ${email}</p>
       <p style="margin: 0; padding: 8px 0;"><strong>Subject:</strong> ${subject}</p>
-      <!-- Message Section -->
-      <div style="margin-top: 20px;">
+      <div style="margin-top: 10px;">
         <h3 style="color: #2563EB; border-bottom: 1px solid #ddd; padding-bottom: 8px;">Message:</h3>
         <p style="padding: 8px; background-color: #f9f9f9; border-radius: 8px; border: 1px solid #ddd;">${message}</p>
       </div>
-      <!-- Footer -->
       <footer style="margin-top: 20px; padding-top: 10px; border-top: 1px solid #eee;">
         <p style="font-size: 0.9em; color: #777;">Cet e-mail a été envoyé à partir du formulaire de contact du site web Oceanconnecting.ma .</p>
       </footer>
@@ -48,7 +44,7 @@ export async function POST(req) {
 `;
     await transporter.sendMail({
       from: "Form contact OceanConnecting",
-      to: "mostafaakajdid6@gmail.com", 
+      to: ["mostafaakajdid6@gmail.com", "zakaryabaouali255@gmail.com", "oceanconnecting.dev@gmail.com"],  
       subject: "Nouveau formulaire de Ocean",
       html: emailContent,
     });
