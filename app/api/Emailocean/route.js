@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
-    const { name,email,message } = await req.json();
+    const { name,email,subject ,message } = await req.json();
 
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -13,7 +13,7 @@ export async function POST(req) {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
-    });q
+    });
 
     const emailContent = `
   <div style="font-family: Arial, sans-serif; color: #333; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f3f4f6;">
@@ -33,6 +33,7 @@ export async function POST(req) {
       <!-- Details Section -->
       <p style="margin: 0; padding: 8px 0;"><strong>Nom:</strong> ${name}</p>
       <p style="margin: 0; padding: 8px 0;"><strong>Email:</strong> ${email}</p>
+      <p style="margin: 0; padding: 8px 0;"><strong>Subject:</strong> ${subject}</p>
       <!-- Message Section -->
       <div style="margin-top: 20px;">
         <h3 style="color: #2563EB; border-bottom: 1px solid #ddd; padding-bottom: 8px;">Message:</h3>
@@ -40,15 +41,15 @@ export async function POST(req) {
       </div>
       <!-- Footer -->
       <footer style="margin-top: 20px; padding-top: 10px; border-top: 1px solid #eee;">
-        <p style="font-size: 0.9em; color: #777;">Cet e-mail a été envoyé à partir du formulaire de contact du site web Potfolio .</p>
+        <p style="font-size: 0.9em; color: #777;">Cet e-mail a été envoyé à partir du formulaire de contact du site web Oceanconnecting.ma .</p>
       </footer>
     </div>
   </div>
 `;
     await transporter.sendMail({
-      from: "My Portfolio",
+      from: "Form contact OceanConnecting",
       to: "mostafaakajdid6@gmail.com", 
-      subject: "Nouveau formulaire de contact",
+      subject: "Nouveau formulaire de Ocean",
       html: emailContent,
     });
 
