@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
-    const { name,email,subject ,message } = await req.json();
+    const { name,email,subject,service ,message } = await req.json();
 
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -34,6 +34,7 @@ export async function POST(req) {
       <p style="margin: 0; padding: 8px 0;"><strong>Nom:</strong> ${name}</p>
       <p style="margin: 0; padding: 8px 0;"><strong>Email:</strong> ${email}</p>
       <p style="margin: 0; padding: 8px 0;"><strong>Subject:</strong> ${subject}</p>
+      <p style="margin: 0; padding: 8px 0;"><strong>Service:</strong> ${service}</p>
       <!-- Message Section -->
       <div style="margin-top: 20px;">
         <h3 style="color: #2563EB; border-bottom: 1px solid #ddd; padding-bottom: 8px;">Message:</h3>
