@@ -48,7 +48,7 @@ export async function POST(req) {
 `;
     await transporter.sendMail({
       from: "Form contact OceanConnecting",
-      to: "mostafaakajdid6@gmail.com", 
+      to: "oceanconnecting.ma@gmail.com", 
       subject: "Nouveau formulaire de Ocean",
       html: emailContent,
     });
