@@ -13,7 +13,7 @@ export async function POST(req) {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
-    });q
+    });
 
     const emailContent = `
   <div style="font-family: Arial, sans-serif; color: #333; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f3f4f6;">
