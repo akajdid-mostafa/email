@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
-    const { name,email,subject,service ,message } = await req.json();
+    const { name,email,subject,service ,comments } = await req.json();
 
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -115,7 +115,7 @@ export async function POST(req) {
             </div>
             <div class="message-box">
                 <h3>Message:</h3>
-                <div class="message-content">${message}</div>
+                <div class="message-content">${comments}</div>
             </div>
         </div>
         <div class="footer">
@@ -127,7 +127,7 @@ export async function POST(req) {
 `;
     await transporter.sendMail({
       from: "Form contact OceanConnecting",
-      to: ["mostafaakajdid6@gmail.com", "zakaryabaouali255@gmail.com", "oceanconnecting.ma@gmail.com"],
+      to: ["mostafaakajdid6@gmail.com", "zakaryabaouali255@gmail.com"],
       subject: "Nouveau formulaire de Ocean",
       html: emailContent,
     });

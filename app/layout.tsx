@@ -29,6 +29,7 @@ export default async function RootLayout({
           <div>
             <h1>All this for Email</h1>
           </div>
+          {/* , "oceanconnecting.ma@gmail.com" */}
         
       </body>
     </html>
