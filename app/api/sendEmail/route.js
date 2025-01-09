@@ -16,38 +16,112 @@ export async function POST(req) {
     });
 
     const emailContent = `
-  <div style="font-family: Arial, sans-serif; color: #333; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f3f4f6;">
-    <div style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center;">
-      <!-- Header -->
-      <h2 style="
-  background: linear-gradient(to right, #2563EB, #DC2626);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  color: transparent;
-  padding-bottom: 10px;
-  border-bottom: 2px solid linear-gradient(to right, #2563EB, #DC2626);
-">
-  Nouveau contact sur mon site 
-</h2>
-      <!-- Details Section -->
-      <p style="margin: 0; padding: 8px 0;"><strong>Nom:</strong> ${name}</p>
-      <p style="margin: 0; padding: 8px 0;"><strong>Email:</strong> ${email}</p>
-      <!-- Message Section -->
-      <div style="margin-top: 20px;">
-        <h3 style="color: #2563EB; border-bottom: 1px solid #ddd; padding-bottom: 8px;">Message:</h3>
-        <p style="padding: 8px; background-color: #f9f9f9; border-radius: 8px; border: 1px solid #ddd;">${message}</p>
-      </div>
-      <!-- Footer -->
-      <footer style="margin-top: 20px; padding-top: 10px; border-top: 1px solid #eee;">
-        <p style="font-size: 0.9em; color: #777;">Cet e-mail a été envoyé à partir du formulaire de contact du site web Potfolio .</p>
-      </footer>
+  <html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau contact sur mon site</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f4f7f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #6366f1, #3b82f6);
+            color: #ffffff;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h2 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 30px;
+        }
+        .detail {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 15px;
+        }
+        .detail:last-child {
+            border-bottom: none;
+        }
+        .detail strong {
+            color: #4b5563;
+            font-weight: 600;
+        }
+        .message-box {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .message-box h3 {
+            color: #3b82f6;
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .message-content {
+            color: #4b5563;
+            line-height: 1.6;
+        }
+        .footer {
+            background-color: #f9fafb;
+            color: #6b7280;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+        @media only screen and (max-width: 600px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Nouveau contact sur mon site</h2>
+        </div>
+        <div class="content">
+            <div class="detail">
+                <strong>Nom:</strong> ${name}
+            </div>
+            <div class="detail">
+                <strong>Email:</strong> ${email}
+            </div>
+            <div class="message-box">
+                <h3>Message:</h3>
+                <div class="message-content">${message}</div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Cet e-mail a été envoyé à partir du formulaire de contact du site web Portfolio.</p>
+        </div>
     </div>
-  </div>
+</body>
+</html>
 `;
     await transporter.sendMail({
       from: "My Portfolio",
-      to: "mostafaakajdid6@gmail.com", 
+      to: "mostafaakajdid2002@gmail.com", 
       subject: "Nouveau formulaire de contact",
       html: emailContent,
     });
