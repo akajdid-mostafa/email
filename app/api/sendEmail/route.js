@@ -121,7 +121,7 @@ export async function POST(req) {
 `;
     await transporter.sendMail({
       from: "My Portfolio",
-      to: "mostafaakajdid2002@gmail.com", 
+      to: ["mostafaakajdid6@gmail.com", "mostafaakajdid2002@gmail.com"], 
       subject: "Nouveau formulaire de contact",
       html: emailContent,
     });
