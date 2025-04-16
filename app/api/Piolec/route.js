@@ -130,8 +130,8 @@ export async function POST(req) {
 </html>
 `;
     await transporter.sendMail({
-      from: "Form contact Piolec",
-      to: ["mostafaakajdid6@gmail.com", "mostafaakajdid2002@gmail.com","miloudsissid@gmail.com"],  
+      from: '"Piolec Contact" <contact@piolec.ma>',
+      to: ["mostafaakajdid6@gmail.com","miloudsissid@gmail.com","piolec21@outlook.com"],
       subject: "Nouveau formulaire de Piolec",
       html: emailContent,
     });
